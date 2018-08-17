@@ -1,0 +1,68 @@
+<?php
+
+
+/**
+ * Turning to the implementation of block file.
+ */
+module_load_include('inc', 'terrasoft_drak', '/inc/block');
+
+/**
+ * Turning to the implementation of block file.
+ */
+module_load_include('inc', 'terrasoft_drak', '/inc/form');
+
+/**
+ * Add custom css for module
+ */
+drupal_add_css(drupal_get_path('module', 'terrasoft_drak') . '/css/jquery.formstyler.theme.css');
+drupal_add_css(drupal_get_path('module', 'terrasoft_drak') . '/css/jquery.formstyler.css');
+drupal_add_css(drupal_get_path('module', 'terrasoft_drak') . '/css/terra.css');
+drupal_add_js(drupal_get_path('module', 'terrasoft_drak') . '/js/jquery.formstyler.min.js');
+if (variable_get('terra_valid') == 1) {
+  drupal_add_js(drupal_get_path('module', 'terrasoft_drak') . '/js/jquery.validate.js');
+  drupal_add_js(drupal_get_path('module', 'terrasoft_drak') . '/js/terra_valid.js');
+}
+else {
+  drupal_add_js(drupal_get_path('module', 'terrasoft_drak') . '/js/terra.js');
+}
+
+/**
+ * Implements hook_help().
+ */
+function terrasoft_drak_help($path, $arg) {
+  switch ($path) {
+    case "admin/help#terrasoft_drak":
+      $output = file_get_contents(drupal_get_path('module', 'terrasoft_drak') . '/README.txt');
+      return '<pre>' . check_plain($output) . '</pre>';
+      break;
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function terrasoft_drak_theme() {
+  return [
+    'terra_form' => [
+      'render element' => 'form',
+      'template' => 'template/terra_form_template',
+    ],
+    'terra_mail' => [
+      'variables' => [
+        'data' => NULL,
+      ],
+      'template' => 'template/terra_mail_template',
+    ],
+  ];
+}
+
+/**
+ * Реализация hook_mail()
+ */
+function terrasoft_drak_mail($key, &$message, $params) {
+  if ($key == 'terra_mail') {
+    $message['subject'] = 'Form data';
+    $message['body'][] = theme('terra_mail', $params['data']);
+  }
+}
+

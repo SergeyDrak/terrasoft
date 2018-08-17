@@ -1,0 +1,134 @@
+@font-face {
+  font-family: 'HelveticaNeueCyrLight';
+  src: url('fonts/HelveticaNeueCyr-Light.eot');
+  src: local('HelveticaNeueCyr-Light'),
+  url('fonts/HelveticaNeueCyr-Light.eot?#iefix') format('embedded-opentype'),
+  url('fonts/HelveticaNeueCyr-Light.woff') format('woff'),
+  url('fonts/HelveticaNeueCyr-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'HelveticaNeueCyrThin';
+  src: url('fonts/HelveticaNeueCyr-Thin.eot');
+  src: local('HelveticaNeueCyr-Thin'),
+  url('fonts/HelveticaNeueCyr-Thin.eot?#iefix') format('embedded-opentype'),
+  url('fonts/HelveticaNeueCyr-Thin.woff') format('woff'),
+  url('fonts/HelveticaNeueCyr-Thin.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'HelveticaNeueCyrRom';
+  src: url('fonts/HelveticaNeueCyr-Roman.eot');
+  src: local('HelveticaNeueCyr-Roman'),
+  url('fonts/HelveticaNeueCyr-Roman.eot?#iefix') format('embedded-opentype'),
+  url('fonts/HelveticaNeueCyr-Roman.woff') format('woff'),
+  url('fonts/HelveticaNeueCyr-Roman.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+.block-terrasoft-drak h2 {
+  text-align: center;
+  background: center center no-repeat url("../images/Logo-form.png");
+  color: transparent;
+  margin: 10px auto 30px !important;
+}
+.wrapper-terra .form-submit {
+  width: 100%;
+  margin-top: 20px;
+  font-family: HelveticaNeueCyrRom, sans-serif;
+  color: #fff;
+  font-size: 19px;
+  background-color: #f27b30;
+  background-image: none;
+  border-color: #c48f68;
+  height: 50px;
+}
+.promo {
+  text-align: center;
+  font-family: HelveticaNeueCyrThin, sans-serif;
+  color: #fff;
+  text-transform: none;
+  font-size: 24px;
+  margin-bottom: 15px;
+  line-height: 25px;
+}
+.form-item input.error, .form-item textarea.error, .form-item select.error {
+  border: 1px solid red !important;
+}
+.jq-selectbox.error {
+  padding: 0;
+  border: 1px solid red !important;
+}
+.wrapper-terra input.form-text, .wrapper-terra .jq-selectbox, .wrapper-terra .form-select, .wrapper-terra .jq-selectbox__select {
+  width: 100%;
+  border: none;
+  border-radius: 0;
+  outline: none;
+  background-color: transparent;
+  background: none;
+  box-shadow: none;
+  font-family: HelveticaNeueCyrLight, sans-serif;
+  color: #fff;
+  font-size: 15px;
+}
+.jq-selectbox__select-text {
+  opacity: 0.6;
+}
+.jq-selectbox__trigger {
+  border-left: none;
+}
+.jq-selectbox__select {
+  padding: 0 0 0 5px;
+  text-shadow: none;
+}
+.jq-selectbox__trigger-arrow {
+  display: none;
+}
+.phone-left {
+  width: 30% !important;
+  margin-right: 5%;
+}
+.phone-right {
+  width: 65% !important;
+  max-width: 65% !important;
+}
+.wrapper-terra {
+  max-width: 460px;
+  width: 100%;
+  margin: 0 auto;
+}
+.wrapper-terra label {
+  display: none;
+}
+.wrapper-terra .wrapper-form {
+  background-color: #64b8df;
+  padding: 40px 65px;
+  border-radius: 3px;
+  border: 1px solid #7ea5b8;
+  overflow: hidden;
+}
+.inline-item {
+  float: left;
+  max-width: 50%;
+}
+.bottom-form {
+  text-align: center;
+  margin-top: 20px;
+  font-family: HelveticaNeueCyrLight;
+  font-size: 15px;
+}
+.bottom-form a {
+  color: #fff;
+}
+.bottom-form a:hover {
+  color: #f27b30;
+}
+.form-item-domain input, .form-item-login input, .jq-selectbox, .form-item-city input, .form-item-code input, .form-item-phone input {
+  border-bottom: 1px solid #fff !important;
+}
+.form-item-domain-suffix input {
+  position: relative;
+  top: 10px;
+}

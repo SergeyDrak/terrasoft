@@ -1,0 +1,65 @@
+<?php
+
+/**
+ * Implements hook_install().
+ */
+function terrasoft_drak_install() {
+  variable_set('terra_email', 'example@mail.com');
+  variable_set('terra_valid', 0);
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function terrasoft_drak_uninstall() {
+  variable_del('terra_email');
+  variable_del('terra_valid');
+}
+
+/**
+ * Implements hook_schema().
+ */
+function terrasoft_drak_schema() {
+  $schema['terra_data'] = [
+    'fields' => [
+      'terra_id' => [
+        'description' => 'Submit ID',
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+      'terra_domain' => [
+        'description' => 'Terra domain',
+        'type' => 'varchar',
+        'length' => 100,
+        'not null' => TRUE,
+      ],
+      'terra_login' => [
+        'description' => 'Terra login',
+        'type' => 'varchar',
+        'length' => 100,
+        'not null' => TRUE,
+      ],
+      'terra_country' => [
+        'description' => 'Terra country',
+        'type' => 'varchar',
+        'length' => 100,
+        'not null' => TRUE,
+      ],
+      'terra_city' => [
+        'description' => 'Terra City',
+        'type' => 'varchar',
+        'length' => 100,
+        'not null' => FALSE,
+      ],
+      'terra_phone' => [
+        'description' => 'Terra phone',
+        'type' => 'varchar',
+        'length' => 100,
+        'not null' => TRUE,
+      ],
+    ],
+    'primary key' => ['terra_id'],
+  ];
+  return $schema;
+}

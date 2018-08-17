@@ -1,0 +1,5 @@
+name = Terrasoft form
+description = Block include Ajax form.
+package = TERRASOFT
+core = 7.x
+configure = admin/structure/block/manage/terrasoft_drak/terra-block/configure
